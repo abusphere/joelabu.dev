@@ -4,13 +4,21 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
 @theme {
   --font-sans: Geist Sans, ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-mono: Geist Mono, ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
-
+/*
+@theme {
+  --font-sans: 'industry', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-mono: 'Courier New', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', monospace;  /* Or keep Geist Mono if preferred
+}
+*/
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -51,11 +59,18 @@
     @apply bg-neutral-100 dark:bg-neutral-900;
     @apply text-black/75 dark:text-white/75;
   }
-
+  /* original header style
   header {
     @apply fixed left-0 right-0 top-0 z-50 py-6;
     @apply bg-neutral-100/75 dark:bg-neutral-900/75;
     @apply saturate-200 backdrop-blur-xs;
+  }
+  */
+
+  header {
+    @apply fixed left-0 right-0 top-0 z-50 py-6;
+    @apply bg-transparent;
+    @apply saturate-200;;
   }
 
   main {
@@ -146,4 +161,41 @@ pre {
 
 .copy-code:active {
   @apply scale-90 transition-transform;
+}
+
+/* Add this to the @layer utilities section, replacing the existing body background */
+/* Background gradient that animates slowly */
+body {
+  background: linear-gradient(-45deg, #171717, #1e3a8a, #0f172a, #0a2332, #1a1a1a);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: gradient 25s ease infinite;
+  @apply font-sans antialiased;
+  @apply flex flex-col;
+  @apply text-black/75 dark:text-white/75;
+}
+
+html.dark body {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #1a1a1a, #0f3341, #172554);
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: gradient 25s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

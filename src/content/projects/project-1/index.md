@@ -1,79 +1,28 @@
 ---
-title: "Astro Sphere"
-description: "Portfolio and blog build with astro."
-date: "03/18/2024"
-demoURL: "https://astro-sphere-demo.vercel.app"
-repoURL: "https://github.com/markhorn-dev/astro-sphere"
+title: "Formula SAE Car Dash"
+description: "Electronics for Linux-based driver display."
+date: "12/23/2025"
+# demoURL: "https://astro-sphere-demo.vercel.app"
+# repoURL: "https://github.com/markhorn-dev/astro-sphere"-->
 ---
 
-![Astro Sphere](/astro-sphere.jpg)
+## Introduction
 
-Astro Sphere is a static, minimalist, lightweight, lightning fast portfolio and blog theme based on Mark Horn's personal website.
+![Formula SAE Car Dash](/DashPCBStack_CAD.png)
 
-It is primarily Astro, Tailwind and Typescript, with a very small amount of SolidJS for stateful components.
+As a first-year member of MIT Motorsports, I was assigned to work on the dash of the car. MIT Motorsports is a team that aprticiupates in Formula SAE Electric, a collegiate engineering competition where students design, build, and race short-wheelbase, open-wheel Formula-style electric race cars.
 
-## 🚀 Deploy your own
+Typically, the car's circuit boards remain similar with insigificant deviations from their predecessors on the last car. However, an element of novelty was introduced this year for the dash subsystem on MY26.
 
-<div class="flex gap-2">
-  <a target="_blank" aria-label="Deploy with Vercel" href="https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-sphere">
-    <img src="/deploy_vercel.svg" />
-  </a>
-  <a target="_blank" aria-label="Deploy with Netlify" href="https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-sphere">
-    <img src="/deploy_netlify.svg" />
-  </a>
-</div>
+Previously, on MY25 the dash was powered by an STM32 microcontroller paired with a TFT display over an RGB interface. The team had issues with the graphics performance of this setup.
 
-## 📋 Features
+As a result, the goal for MY26 was to incorporate increased graphics performance though the usage of a single-board computer running Linux to power the dash. Thus, we ended up with an Orange Pi Zero 3W, chosen over options such as an Android tablet or Raspberry Pi to prioritize bootspeed. The Orange Pi Zero 3W main advantage is an open-source U-Boot bootloader, allowing for the modification of the boot process to get rid of noncritical processes and peripherals and ensure the system boots in a timely manner.
 
-- ✅ 100/100 Lighthouse performance
-- ✅ Responsive
-- ✅ Accessible
-- ✅ SEO-friendly
-- ✅ Typesafe
-- ✅ Minimal style
-- ✅ Light/Dark Theme
-- ✅ Animated UI
-- ✅ Tailwind styling
-- ✅ Auto generated sitemap
-- ✅ Auto generated RSS Feed
-- ✅ Markdown support
-- ✅ MDX Support (components in your markdown)
-- ✅ Searchable content (posts and projects)
+## Details
 
-## 💯 Lighthouse score
+We needed to design a PCB to interface the Orange Pi with the rest of the car and the dash's peripherals. The resulting PCB, referred to as the dash board, has a CAN controller and transceiver for communicating with the rest of the car, an SPI connection for communicating with the wheel PCB, a 24 V to 5 V regulator, and numerous connectors for interfacing with the dash's safety buttons and LED indicators.
 
-![Astro Sphere Lighthouse Score](/lighthouse-nano.jpg)
 
-## 🕊️ Lightweight
+🏗️ 🦺 🛠️ 👷🏿 More to come as we assemble and test the board this upcoming January!
 
-All pages under 100kb (including fonts)
-
-## ⚡︎ Fast
-
-Rendered in ~40ms on localhost
-
-## 📄 Configuration
-
-The blog posts on the demo serve as the documentation and configuration.
-
-## 💻 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, etc
-
-| Command                   | Action                                            |
-| :------------------------ | :------------------------------------------------ |
-| `npm install`             | Installs dependencies                             |
-| `npm run dev`             | Starts local dev server at `localhost:4321`       |
-| `npm run sync`            | Generates TypeScript types for all Astro modules. |
-| `npm run build`           | Build your production site to `./dist/`           |
-| `npm run preview`         | Preview your build locally, before deploying      |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check`  |
-| `npm run astro -- --help` | Get help using the Astro CLI                      |
-| `npm run lint`            | Run ESLint                                        |
-| `npm run lint:fix`        | Auto-fix ESLint issues                            |
-
-## 🏛️ License
-
-MIT
+![Dash PCB 3D Preview](/DashPCB_Altium3D.png)
