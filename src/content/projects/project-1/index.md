@@ -10,7 +10,7 @@ date: "12/23/2025"
 
 ![Formula SAE Car Dash](/DashPCBStack_CAD.png)
 
-As a first-year member of MIT Motorsports, I was assigned to work on the dash of the car. MIT Motorsports is a team that aprticiupates in Formula SAE Electric, a collegiate engineering competition where students design, build, and race short-wheelbase, open-wheel Formula-style electric race cars.
+As a first-year member of MIT Motorsports, I was assigned to work on the dash of the car. MIT Motorsports is a team that participates in Formula SAE Electric, a collegiate engineering competition where students design, build, and race short-wheelbase, open-wheel Formula-style electric race cars.
 
 Typically, the car's circuit boards remain similar with insigificant deviations from their predecessors on the last car. However, an element of novelty was introduced this year for the dash subsystem on MY26.
 
