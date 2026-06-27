@@ -23,6 +23,6 @@ As a result, the goal for MY26 was to incorporate increased graphics performance
 We needed to design a PCB to interface the Orange Pi with the rest of the car and the dash's peripherals. The resulting PCB, referred to as the dash board, has a CAN controller and transceiver for communicating with the rest of the car, an SPI connection for communicating with the wheel PCB, a 24 V to 5 V regulator, and numerous connectors for interfacing with the dash's safety buttons and LED indicators.
 
 
-🏗️ 🦺 🛠️ 👷🏿 More to come as we assemble and test the board this upcoming January!
+🏗️ Plan is to assemble and test the board in January.
 
 ![Dash PCB 3D Preview](/DashPCB_Altium3D.png)
