@@ -10,7 +10,7 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort();
 <Layout title="Tags" description="List of tags used.">
   <Container>
     <div class="space-y-10">
-      <h1 class="animate font-semibold">All Tags</h1>
+      <h1 class="animate font-semibold text-white">All Tags</h1>
       <div class="animate flex flex-wrap gap-2">
         {
           tags.map((tag) => (
@@ -19,7 +19,7 @@ const tags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort();
               class="rounded-sm border border-white/20 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-white/5 hover:text-white focus-visible:bg-white/5 focus-visible:text-white"
             >
               {tag}{" "}
-              <span class="text-sm text-gray-600">
+              <span class="text-sm text-white/50">
                 ({posts.filter((post) => post.data.tags?.includes(tag)).length})
               </span>
             </a>

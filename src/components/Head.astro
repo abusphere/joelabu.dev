@@ -76,16 +76,9 @@ const { title, description, image = "/astro-micro.jpg" } = Astro.props;
 <script is:inline>
   (function () {
     try {
-      const userTheme = localStorage.getItem("theme");
-      const isDark =
-        userTheme === "dark" ||
-        (userTheme !== "light" && window.matchMedia?.("(prefers-color-scheme: dark)")?.matches);
-
-      if (isDark) {
-        document.documentElement.classList.add("dark");
-      }
+      document.documentElement.classList.add("dark");
     } catch (error) {
-      // Ignore localStorage or matchMedia errors.
+      // Ignore errors.
     }
   })();
 </script>
@@ -223,13 +216,7 @@ const { title, description, image = "/astro-micro.jpg" } = Astro.props;
   }
 
   function preloadTheme() {
-    const userTheme = localStorage.theme;
-
-    if (userTheme === "light" || userTheme === "dark") {
-      toggleTheme(userTheme === "dark");
-    } else {
-      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    }
+    toggleTheme(true);
   }
 
   function addCopyCodeButtons() {
