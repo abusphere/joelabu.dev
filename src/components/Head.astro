@@ -73,6 +73,24 @@ const { title, description, image = "/astro-micro.jpg" } = Astro.props;
 
 <ClientRouter />
 
+<!-- Pre-theme script to dark theme is set before page finishes loading -->
+<script is:inline>
+  (function () {
+    try {
+      const userTheme = localStorage.getItem("theme");
+      const isDark =
+        userTheme === "dark" ||
+        (userTheme !== "light" && window.matchMedia?.("(prefers-color-scheme: dark)")?.matches);
+
+      if (isDark) {
+        document.documentElement.classList.add("dark");
+      }
+    } catch (error) {
+      // Ignore localStorage or matchMedia errors.
+    }
+  })();
+</script>
+
 <script is:inline>
   function init() {
     preloadTheme();
